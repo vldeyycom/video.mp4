@@ -40,7 +40,7 @@ if (idVideoDicari && daftarVideo[idVideoDicari]) {
     
     let tahapIklan = "shopee"; // Mulai dari tahap Shopee
     
-    const linkShopee = "https://s.shopee.co.id/8AUujQzvfy";
+    const linkShopee = "https://s.shopee.co.id/1qbH9cIAl9";
     const linkSmartlink = "https://demolishwrestconclusions.com/j7rzks60qh?key=9c3b7a6de53037ba59efefceb7f4b503"; // Ganti dengan Smartlink Adsterra Anda
 
     // Begitu video mulai diputar, overlay langsung muncul otomatis

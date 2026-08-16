@@ -3,18 +3,18 @@
 // ==========================================
 const daftarVideo = {
     "1": "https://cdn.videy.co/ZwdCN9621.mp4",
-    "2": "https://cdn2.videy.co/LINK_VIDEO_2.mp4",
-    "3": "https://cdn2.videy.co/LINK_VIDEO_3.mp4",
-    "4": "https://cdn2.videy.co/LINK_VIDEO_4.mp4",
-    "5": "https://cdn2.videy.co/LINK_VIDEO_5.mp4",
-    "6": "https://cdn2.videy.co/LINK_VIDEO_6.mp4",
-    "7": "https://cdn2.videy.co/LINK_VIDEO_7.mp4",
-    "8": "https://cdn2.videy.co/LINK_VIDEO_8.mp4",
-    "9": "https://cdn2.videy.co/LINK_VIDEO_9.mp4",
-    "10": "https://cdn2.videy.co/LINK_VIDEO_10.mp4",
-    "11": "https://cdn2.videy.co/LINK_VIDEO_11.mp4",
-    "12": "https://cdn2.videy.co/LINK_VIDEO_12.mp4",
-    "13": "https://cdn2.videy.co/LINK_VIDEO_13.mp4",
+    "2": "https://cdn2.videy.co/VNDBFNBT1.mp4",
+    "3": "https://cdn2.videy.co/lZBK9W3A1.mp4",
+    "4": "https://cdn2.videy.co/pFDi1M5m1.mp4",
+    "5": "https://cdn2.videy.co/BjVsmoPs1.mp4",
+    "6": "https://cdn.videy.co/8cWz7SRK1.mp4",
+    "7": "https://cdn2.videy.co/AAovM0bj1.mp4",
+    "8": "https://cdn2.videy.co/CU550Zof1.mp4",
+    "9": "https://cdn2.videy.co/mRZ1Lm0Y1.mp4",
+    "10": "https://cdn2.videy.co/rTERwuzM1.mp4",
+    "11": "https://cdn2.videy.co/xn4L8uRk1.mp4",
+    "12": "https://cdn2.videy.co/s2yazRB51.mp4",
+    "13": "https://cdn2.videy.co/KQPf4Otj1.mp4",
     "14": "https://cdn2.videy.co/LINK_VIDEO_14.mp4"
 };
 

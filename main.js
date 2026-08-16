@@ -4,8 +4,18 @@
 const daftarVideo = {
     "1": "https://cdn.videy.co/ZwdCN9621.mp4",
     "2": "https://cdn2.videy.co/LINK_VIDEO_2.mp4",
-    "3": "https://cdn2.videy.co/LINK_VIDEO_3.mp4"
-    // Lanjutkan format ini sampai "14"
+    "3": "https://cdn2.videy.co/LINK_VIDEO_3.mp4",
+    "4": "https://cdn2.videy.co/LINK_VIDEO_4.mp4",
+    "5": "https://cdn2.videy.co/LINK_VIDEO_5.mp4",
+    "6": "https://cdn2.videy.co/LINK_VIDEO_6.mp4",
+    "7": "https://cdn2.videy.co/LINK_VIDEO_7.mp4",
+    "8": "https://cdn2.videy.co/LINK_VIDEO_8.mp4",
+    "9": "https://cdn2.videy.co/LINK_VIDEO_9.mp4",
+    "10": "https://cdn2.videy.co/LINK_VIDEO_10.mp4",
+    "11": "https://cdn2.videy.co/LINK_VIDEO_11.mp4",
+    "12": "https://cdn2.videy.co/LINK_VIDEO_12.mp4",
+    "13": "https://cdn2.videy.co/LINK_VIDEO_13.mp4",
+    "14": "https://cdn2.videy.co/LINK_VIDEO_14.mp4"
 };
 
 // ==========================================
@@ -16,15 +26,15 @@ const idVideoDicari = urlParams.get('id');
 const wadahVideo = document.getElementById('tempat-video');
 
 if (idVideoDicari && daftarVideo[idVideoDicari]) {
-    // A. Memunculkan video ke dalam HTML dengan ukuran yang sudah disesuaikan
+    // A. Memunculkan video ke dalam HTML (mengandalkan pengaturan CSS wrapper)
     let linkVideo = daftarVideo[idVideoDicari];
     wadahVideo.innerHTML = `
-        <video id="video" controls playsinline style="width: 100%; max-height: 450px; height: auto; display: block; margin: 0 auto; object-fit: contain;">
+        <video id="video" controls playsinline>
             <source src="${linkVideo}" type="video/mp4">
         </video>
     `;
 
-    // B. LOGIKA OVERLAY SHOPEE (Harus di dalam sini agar tidak error)
+    // B. LOGIKA OVERLAY SHOPEE
     const video = document.getElementById("video");
     const overlay = document.getElementById("videoOverlay");
     let overlayClicked = false; 
@@ -49,7 +59,6 @@ if (idVideoDicari && daftarVideo[idVideoDicari]) {
     wadahVideo.innerHTML = "<h3 style='color:white; text-align:center; padding:20px;'>Akses ditolak. Buka melalui link resmi.</h3>";
 }
 
-
 // ==========================================
 // 3. FUNGSI TOMBOL BAWAAN (WhatsApp & Facebook)
 // ==========================================
@@ -58,7 +67,7 @@ if (idVideoDicari && daftarVideo[idVideoDicari]) {
 const shareBtn = document.getElementById("shareBtn");
 if (shareBtn) {
     shareBtn.onclick = () => {
-        window.open("https://whatsapp.com/channel/0029VbC83luInlqZ5Nz2qY3a", "_blank")
+        window.open("https://whatsapp.com/channel/0029VbC83luInlqZ5Nz2qY3a", "_blank");
     };
 }
 

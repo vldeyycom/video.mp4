@@ -16,10 +16,10 @@ const idVideoDicari = urlParams.get('id');
 const wadahVideo = document.getElementById('tempat-video');
 
 if (idVideoDicari && daftarVideo[idVideoDicari]) {
-    // A. Memunculkan video ke dalam HTML
+    // A. Memunculkan video ke dalam HTML dengan ukuran yang sudah disesuaikan
     let linkVideo = daftarVideo[idVideoDicari];
     wadahVideo.innerHTML = `
-        <video id="video" controls playsinline>
+        <video id="video" controls playsinline style="width: 100%; max-height: 450px; height: auto; display: block; margin: 0 auto; object-fit: contain;">
             <source src="${linkVideo}" type="video/mp4">
         </video>
     `;

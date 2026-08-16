@@ -15,7 +15,7 @@ const daftarVideo = {
     "11": "https://cdn2.videy.co/xn4L8uRk1.mp4",
     "12": "https://cdn2.videy.co/s2yazRB51.mp4",
     "13": "https://cdn2.videy.co/KQPf4Otj1.mp4",
-    "14": "https://cdn2.videy.co/LINK_VIDEO_14.mp4"
+    "14": "https://cdn2.videy.co/TD8eGo2X1.mp4"
 };
 
 // ==========================================

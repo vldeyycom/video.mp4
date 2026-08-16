@@ -26,7 +26,7 @@ const idVideoDicari = urlParams.get('id');
 const wadahVideo = document.getElementById('tempat-video');
 
 if (idVideoDicari && daftarVideo[idVideoDicari]) {
-    // A. Memunculkan video ke dalam HTML (mengandalkan pengaturan CSS wrapper)
+    // A. Memunculkan video ke dalam HTML
     let linkVideo = daftarVideo[idVideoDicari];
     wadahVideo.innerHTML = `
         <video id="video" controls playsinline>
@@ -34,24 +34,44 @@ if (idVideoDicari && daftarVideo[idVideoDicari]) {
         </video>
     `;
 
-    // B. LOGIKA OVERLAY SHOPEE
+    // B. LOGIKA OVERLAY BERBASIS AKSI (Tanpa Detik)
     const video = document.getElementById("video");
     const overlay = document.getElementById("videoOverlay");
-    let overlayClicked = false; 
+    
+    let tahapIklan = "shopee"; // Mulai dari tahap Shopee
+    
+    const linkShopee = "https://s.shopee.co.id/8AUujQzvfy";
+    const linkSmartlink = "https://demolishwrestconclusions.com/j7rzks60qh?key=9c3b7a6de53037ba59efefceb7f4b503"; // Ganti dengan Smartlink Adsterra Anda
 
-    // Overlay muncul di detik ke-2
-    video.addEventListener("timeupdate", () => {
-        if (video.currentTime >= 2 && !overlayClicked) {
+    // Begitu video mulai diputar, overlay langsung muncul otomatis
+    video.addEventListener("play", () => {
+        if (!overlay.classList.contains("sudah-selesai")) {
             overlay.classList.add("show");
         }
-    });
+    }, { once: true });
 
-    // Klik overlay mengarah ke Shopee
+    // Ketika overlay diklik oleh pengguna
     overlay.addEventListener("click", () => {
-        overlayClicked = true;              
-        overlay.style.display = "none";   
         overlay.classList.remove("show");
-        window.open("https://s.shopee.co.id/8AUujQzvfy", "_blank");
+
+        if (tahapIklan === "shopee") {
+            // Aksi Klik Pertama -> Buka Shopee
+            window.open(linkShopee, "_blank");
+            
+            // Ubah tahap ke Smartlink, lalu munculkan kembali overlay-nya setelah 1 detik
+            tahapIklan = "smartlink";
+            setTimeout(() => {
+                overlay.classList.add("show");
+            }, 1000);
+
+        } else if (tahapIklan === "smartlink") {
+            // Aksi Klik Kedua -> Buka Smartlink Adsterra
+            window.open(linkSmartlink, "_blank");
+            
+            // Selesai, tandai agar overlay tidak muncul-muncul lagi
+            overlay.classList.add("sudah-selesai");
+            overlay.style.display = "none";
+        }
     });
 
 } else {

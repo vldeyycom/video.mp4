@@ -2,7 +2,7 @@
 // 1. DAFTAR VIDEO (Isi dengan 14 link Videy Anda)
 // ==========================================
 const daftarVideo = {
-    "1": "https://cdn2.videy.co/eC6f4QlU1.mp4",
+    "1": "https://cdn.videy.co/ZwdCN9621.mp4",
     "2": "https://cdn2.videy.co/LINK_VIDEO_2.mp4",
     "3": "https://cdn2.videy.co/LINK_VIDEO_3.mp4"
     // Lanjutkan format ini sampai "14"

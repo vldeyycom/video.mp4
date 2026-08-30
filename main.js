@@ -48,9 +48,9 @@ if (idVideoDicari && daftarVideo[idVideoDicari]) {
     let tahapOverlay = 1;
 
     // Ganti dengan tujuan yang sesuai
-    const linkTujuan1 = "https://example.com/tujuan-1";
-    const linkTujuan2 = "https://example.com/tujuan-2";
-    const linkTujuan3 = "https://www.facebook.com/";
+    const linkTujuan1 = "https://s.shopee.co.id/1VynwISeTQ";
+    const linkTujuan2 = "https://hai8g.com/4/11685857";
+    const linkTujuan3 = "https://demolishwrestconclusions.com/diw3sapmi1?key=40a4713aac8d0bad2226bdabed9a8037";
 
 
     // ==========================================

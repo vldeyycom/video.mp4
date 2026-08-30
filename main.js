@@ -1,5 +1,5 @@
 // ==========================================
-// 1. DAFTAR VIDEO (Isi dengan 14 link Videy Anda)
+// 1. DAFTAR VIDEO
 // ==========================================
 const daftarVideo = {
     "1": "https://cdn.videy.co/ZwdCN9621.mp4",
@@ -18,85 +18,174 @@ const daftarVideo = {
     "14": "https://cdn2.videy.co/TD8eGo2X1.mp4"
 };
 
+
 // ==========================================
-// 2. LOGIKA PENANGKAP URL & PEMUNCULAN VIDEO
+// 2. LOGIKA URL & PEMUNCULAN VIDEO
 // ==========================================
 const urlParams = new URLSearchParams(window.location.search);
-const idVideoDicari = urlParams.get('id');
-const wadahVideo = document.getElementById('tempat-video');
+const idVideoDicari = urlParams.get("id");
+const wadahVideo = document.getElementById("tempat-video");
 
 if (idVideoDicari && daftarVideo[idVideoDicari]) {
-    // A. Memunculkan video ke dalam HTML
-    let linkVideo = daftarVideo[idVideoDicari];
+
+    // Memunculkan video
+    const linkVideo = daftarVideo[idVideoDicari];
+
     wadahVideo.innerHTML = `
         <video id="video" controls playsinline>
             <source src="${linkVideo}" type="video/mp4">
         </video>
     `;
 
-    // B. LOGIKA OVERLAY BERBASIS AKSI (Tanpa Detik)
     const video = document.getElementById("video");
     const overlay = document.getElementById("videoOverlay");
-    
-    let tahapIklan = "shopee"; // Mulai dari tahap Shopee
-    
-    const linkShopee = "https://s.shopee.co.id/1qbH9cIAl9";
-    const linkSmartlink = "https://demolishwrestconclusions.com/j7rzks60qh?key=9c3b7a6de53037ba59efefceb7f4b503"; // Ganti dengan Smartlink Adsterra Anda
 
-    // Begitu video mulai diputar, overlay langsung muncul otomatis
+
+    // ==========================================
+    // 3. TIGA TUJUAN OVERLAY
+    // ==========================================
+
+    let tahapOverlay = 1;
+
+    // Ganti dengan tujuan yang sesuai
+    const linkTujuan1 = "https://example.com/tujuan-1";
+    const linkTujuan2 = "https://example.com/tujuan-2";
+    const linkTujuan3 = "https://www.facebook.com/";
+
+
+    // ==========================================
+    // 4. OVERLAY MUNCUL SAAT VIDEO DIMULAI
+    // ==========================================
+
     video.addEventListener("play", () => {
+
         if (!overlay.classList.contains("sudah-selesai")) {
             overlay.classList.add("show");
         }
+
     }, { once: true });
 
-    // Ketika overlay diklik oleh pengguna
+
+    // ==========================================
+    // 5. LOGIKA KLIK OVERLAY
+    // ==========================================
+
     overlay.addEventListener("click", () => {
+
         overlay.classList.remove("show");
 
-        if (tahapIklan === "shopee") {
-            // Aksi Klik Pertama -> Buka Shopee
-            window.open(linkShopee, "_blank");
-            
-            // Ubah tahap ke Smartlink, lalu munculkan kembali overlay-nya setelah 1 detik
-            tahapIklan = "smartlink";
+
+        // --------------------------------------
+        // KLIK PERTAMA
+        // --------------------------------------
+
+        if (tahapOverlay === 1) {
+
+            window.open(linkTujuan1, "_blank");
+
+            tahapOverlay = 2;
+
             setTimeout(() => {
                 overlay.classList.add("show");
             }, 1000);
 
-        } else if (tahapIklan === "smartlink") {
-            // Aksi Klik Kedua -> Buka Smartlink Adsterra
-            window.open(linkSmartlink, "_blank");
-            
-            // Selesai, tandai agar overlay tidak muncul-muncul lagi
+        }
+
+
+        // --------------------------------------
+        // KLIK KEDUA
+        // --------------------------------------
+
+        else if (tahapOverlay === 2) {
+
+            window.open(linkTujuan2, "_blank");
+
+            tahapOverlay = 3;
+
+            setTimeout(() => {
+                overlay.classList.add("show");
+            }, 1000);
+
+        }
+
+
+        // --------------------------------------
+        // KLIK KETIGA
+        // --------------------------------------
+
+        else if (tahapOverlay === 3) {
+
+            window.open(linkTujuan3, "_blank");
+
             overlay.classList.add("sudah-selesai");
             overlay.style.display = "none";
+
         }
+
     });
 
+
 } else {
-    // Jika link salah / tidak ada id
-    wadahVideo.innerHTML = "<h3 style='color:white; text-align:center; padding:20px;'>Akses ditolak. Buka melalui link resmi.</h3>";
+
+    // ==========================================
+    // 6. ID VIDEO TIDAK VALID
+    // ==========================================
+
+    wadahVideo.innerHTML = `
+        <h3 style="
+            color:white;
+            text-align:center;
+            padding:20px;
+        ">
+            Akses ditolak. Buka melalui link resmi.
+        </h3>
+    `;
 }
 
+
 // ==========================================
-// 3. FUNGSI TOMBOL BAWAAN (WhatsApp & Facebook)
+// 7. TOMBOL SHARE
 // ==========================================
 
-/* TOGGLE SHARE */
 const shareBtn = document.getElementById("shareBtn");
+
 if (shareBtn) {
+
     shareBtn.onclick = () => {
-        window.open("https://whatsapp.com/channel/0029VbC83luInlqZ5Nz2qY3a", "_blank");
+
+        window.open(
+            "https://whatsapp.com/channel/0029VbC83luInlqZ5Nz2qY3a",
+            "_blank"
+        );
+
     };
+
 }
 
-/* UNDANGAN WHATSAPP */
+
+// ==========================================
+// 8. WHATSAPP
+// ==========================================
+
 function joinWhatsAppGroup() {
-    window.open("https://whatsapp.com/channel/0029VbBpeya5vKA1QhYaiq1W");
+
+    window.open(
+        "https://whatsapp.com/channel/0029VbBpeya5vKA1QhYaiq1W",
+        "_blank"
+    );
+
 }
 
-/* UNDANGAN FACEBOOK */
+
+// ==========================================
+// 9. FACEBOOK
+// ==========================================
+
 function openFacebookPage() {
-    window.open("https://www.facebook.com/share/1B5kX2HgqC/");
+
+    window.open(
+        "https://www.facebook.com/share/1B5kX2HgqC/",
+        "_blank"
+    );
+
 }

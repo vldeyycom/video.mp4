@@ -2,7 +2,7 @@
 // 1. DAFTAR VIDEO
 // ==========================================
 const daftarVideo = {
-    "1": "https://cdn.videy.co/ZwdCN9621.mp4",
+    "1": "https://cdn2.videy.co/ZwdCN9621.mp4",
     "2": "https://cdn2.videy.co/VNDBFNBT1.mp4",
     "3": "https://cdn2.videy.co/lZBK9W3A1.mp4",
     "4": "https://cdn2.videy.co/pFDi1M5m1.mp4",
